@@ -73,7 +73,7 @@
                 "labelFontSize": 14,
                 "symbolSize": "400",
                 "symbolType": "square",
-                "orient": "bottom",
+                "orient": "top-left",
                 "titleLimit": 800,
                 "offset": 0
             }
