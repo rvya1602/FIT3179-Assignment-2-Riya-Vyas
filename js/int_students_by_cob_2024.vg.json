@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "International Students in Australia by Top 20 Countries of Origin (2024)",
+        "fontSize": 20,
+        "fontWeight": "bold"
+    },
+    "width": 400,
+    "height": 400,
+    "data": {
+        "url": "data/international_students_by_cob_20.csv"
+    },
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "No_Int_Students_2024",
+                    "type": "quantitative",
+                    "title": "Number of International Students",
+                    "axis": {
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333"
+                    }
+                },
+                "y": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "sort": "none",
+                    "title": "Country",
+                    "axis": {
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333",
+                        "labelFontSize": 12
+                    }
+                },
+                "color": {
+                    "value": "#007bff"
+                },
+                "opacity": {
+                    "value": 1
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "No_Int_Students_2024",
+                        "type": "quantitative",
+                        "title": "No. Students",
+                        "format": ","
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "bottom",
+                "dx": 3,
+                "dy": 3,
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "x": {
+                    "field": "No_Int_Students_2024",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "sort": "none"
+                },
+                "text": {
+                    "field": "studentLabel",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "#000"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "format(datum.No_Int_Students_2024, ',')",
+                    "as": "studentLabel"
+                }
+            ]
+        }
+    ]
+}
