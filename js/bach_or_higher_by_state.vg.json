@@ -1,11 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
-    "height": 400,
-    "view": {"stroke": null},
+    "width": 700,
+    "height": 700,
+    "view": {
+        "stroke": null
+    },
     "title": {
         "text": "Percent of Population with Bachelor or Higher by State",
-        "fontSize": 18,
+        "fontSize": 20,
         "fontWeight": "bold"
     },
     "data": {
@@ -32,6 +34,10 @@
         {
             "calculate": "datum.properties.STE_NAME16",
             "as": "State_Name"
+        },
+        {
+            "calculate": "datum.Percent_Population < 25 ? '20–25%' : datum.Percent_Population < 30 ? '25–30%' : datum.Percent_Population < 35 ? '30–35%' : '35%+'",
+            "as": "Percent_Range"
         }
     ],
     "projection": {
@@ -44,21 +50,32 @@
     },
     "encoding": {
         "color": {
-            "field": "Percent_Population",
-            "type": "quantitative",
+            "field": "Percent_Range",
+            "type": "nominal",
             "scale": {
-                "scheme": "blues"
+                "domain": [
+                    "20–25%",
+                    "25–30%",
+                    "30–35%",
+                    "35%+"
+                ],
+                "range": [
+                    "#deebf7",
+                    "#9ecae1",
+                    "#4292c6",
+                    "#08519c"
+                ]
             },
             "legend": {
-                "title": [
-                    "Percentage of Population",
-                    "with Bachelor's Degree",
-                    "or Higher"
-                ],
-                "titleFontSize": 14,
+                "title": "Percent of Population (Aged 15 Years and Over) with Bachelor’s Degree or Higher",
+                "titleFontSize": 16,
                 "titleFontWeight": "bold",
-                "labelFontSize": 12,
-                "orient": "right"
+                "labelFontSize": 14,
+                "symbolSize": "400",
+                "symbolType": "square",
+                "orient": "bottom",
+                "titleLimit": 800,
+                "offset": 0
             }
         },
         "tooltip": [
