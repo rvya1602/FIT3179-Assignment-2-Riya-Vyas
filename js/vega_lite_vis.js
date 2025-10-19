@@ -27,3 +27,8 @@ var vg_6 = "js/dom_com_by_edu_2023_2024.vg.json";
 // { actions : false } to hide the "Open in Vega" etc... actions (the three dots that show)
 vegaEmbed("#dom_com_edu_2023_2024", vg_6, { actions : false }).then(function(result) {
 }).catch(console.error);
+
+var vg_7 = "js/undergrad_emp_sal_2023.vg.json";
+// { actions : false } to hide the "Open in Vega" etc... actions (the three dots that show)
+vegaEmbed("#undergrad_emp_sal", vg_7, { actions : false }).then(function(result) {
+}).catch(console.error);
