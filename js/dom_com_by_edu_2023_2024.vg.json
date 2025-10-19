@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Diverging bar chart showing positive vs negative change in commencing students by field.",
     "title": {
-        "text": "Change (%) in Commencing Domestic Students by Area of Study (2023 to 2024)",
+        "text": "Change (%) in Commencing Domestic Students (for Higher Education) by Area of Study (2023 to 2024)",
         "fontSize": 18,
         "fontWeight": "bold",
         "anchor": "middle"
@@ -33,7 +33,7 @@
                 "x": {
                     "field": "Percent_Change",
                     "type": "quantitative",
-                    "title": "% Change",
+                    "title": "Change (%)",
                     "axis": {
                         "grid": true,
                         "labelExpr": "datum.label + '%'",
