@@ -1,5 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "title": {
+        "text": "Domestic vs International Student Numbers Over the Years",
+        "fontSize": 20,
+        "fontWeight": "bold"
+    },
     "width": 700,
     "height": 500,
     "data": {
@@ -33,13 +38,25 @@
             "timeUnit": "year",
             "axis": {
                 "format": "%Y",
-                "title": "Year"
+                "title": "Year",
+                "tickCount": 7,
+                "titleFontSize": 16,
+                "titleFontWeight": "bold",
+                "titleColor": "#333",
+                "labelFontSize": 12
             }
         },
         "y": {
             "aggregate": "sum",
             "field": "count",
-            "title": "Number of Students"
+            "title": "Number of Students",
+            "axis": {
+                "tickCount": 7,
+                "titleFontSize": 16,
+                "titleFontWeight": "bold",
+                "titleColor": "#333",
+                "labelFontSize": 12
+            }
         },
         "color": {
             "field": "series",

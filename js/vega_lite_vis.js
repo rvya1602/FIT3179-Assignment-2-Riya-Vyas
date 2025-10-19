@@ -17,3 +17,13 @@ var vg_4 = "js/dom_vs_int_students.vg.json";
 // { actions : false } to hide the "Open in Vega" etc... actions (the three dots that show)
 vegaEmbed("#dom_vs_int_students", vg_4, { actions : false }).then(function(result) {
 }).catch(console.error);
+
+var vg_5 = "js/dom_com_by_edu_2015_2024.vg.json";
+// { actions : false } to hide the "Open in Vega" etc... actions (the three dots that show)
+vegaEmbed("#dom_com_edu_2015_2024", vg_5, { actions : false }).then(function(result) {
+}).catch(console.error);
+
+var vg_6 = "js/dom_com_by_edu_2023_2024.vg.json";
+// { actions : false } to hide the "Open in Vega" etc... actions (the three dots that show)
+vegaEmbed("#dom_com_edu_2023_2024", vg_6, { actions : false }).then(function(result) {
+}).catch(console.error);

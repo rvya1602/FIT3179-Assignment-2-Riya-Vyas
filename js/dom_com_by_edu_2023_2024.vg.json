@@ -1,0 +1,97 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Diverging bar chart showing positive vs negative change in commencing students by field.",
+    "title": {
+        "text": "Change (%) in Commencing Domestic Students by Area of Study (2023 to 2024)",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "anchor": "middle"
+    },
+    "width": 700,
+    "height": {
+        "step": 30
+    },
+    "data": {
+        "url": "data/dom_commencements_by_edu_2023_2024.csv"
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar"
+            },
+            "encoding": {
+                "y": {
+                    "field": "Field",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Area of Study",
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "labelFontSize": 12
+                    }
+                },
+                "x": {
+                    "field": "Percent_Change",
+                    "type": "quantitative",
+                    "title": "% Change",
+                    "axis": {
+                        "grid": true,
+                        "labelExpr": "datum.label + '%'",
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold"
+                    }
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.Percent_Change > 0",
+                        "value": "#4CAF50"
+                    },
+                    "value": "#E53935"
+                },
+                "tooltip": [
+                    {
+                        "field": "Field",
+                        "title": "Area of Study"
+                    },
+                    {
+                        "field": "Percent_Change",
+                        "format": ".1f",
+                        "title": "Change (%)"
+                    }
+                ]
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 3,
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "y": {
+                    "field": "Field",
+                    "type": "nominal"
+                },
+                "x": {
+                    "field": "Percent_Change",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "Percent_Change",
+                    "type": "quantitative",
+                    "format": ".1f"
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "grid": true
+        }
+    }
+}
