@@ -43,59 +43,146 @@
     "projection": {
         "type": "mercator"
     },
-    "mark": {
-        "type": "geoshape",
-        "stroke": "white",
-        "strokeWidth": 1
-    },
-    "encoding": {
-        "color": {
-            "field": "Percent_Range",
-            "type": "nominal",
-            "scale": {
-                "domain": [
-                    "20–25%",
-                    "25–30%",
-                    "30–35%",
-                    "35%+"
+    "params": [
+        {
+            "name": "selected_state",
+            "value": "Show all",
+            "bind": {
+                "input": "select",
+                "options": [
+                    "Show all",
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "South Australia",
+                    "Western Australia",
+                    "Tasmania",
+                    "Northern Territory",
+                    "Australian Capital Territory"
                 ],
-                "range": [
-                    "#deebf7",
-                    "#9ecae1",
-                    "#4292c6",
-                    "#08519c"
-                ]
+                "name": "Select a state: "
+            }
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "geoshape",
+                "stroke": "white",
+                "strokeWidth": 1
             },
-            "legend": {
-                "title": "Percent of Population (Aged 15 Years and Over) with Bachelor’s Degree or Higher",
-                "titleFontSize": 16,
-                "titleFontWeight": "bold",
-                "labelFontSize": 14,
-                "symbolSize": "400",
-                "symbolType": "square",
-                "orient": "top-left",
-                "titleLimit": 800,
-                "offset": 0
+            "encoding": {
+                "color": {
+                    "field": "Percent_Range",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "20–25%",
+                            "25–30%",
+                            "30–35%",
+                            "35%+"
+                        ],
+                        "range": [
+                            "#deebf7",
+                            "#9ecae1",
+                            "#4292c6",
+                            "#08519c"
+                        ]
+                    },
+                    "legend": {
+                        "title": "Percent of Population (Aged 15 Years and Over) with Bachelor’s Degree or Higher",
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "labelFontSize": 14,
+                        "symbolSize": 400,
+                        "symbolType": "square",
+                        "orient": "top-left",
+                        "titleLimit": 800,
+                        "offset": 0
+                    },
+                    "condition": {
+                        "test": "selected_state != 'Show all' && datum.State_Name != selected_state",
+                        "value": "#d9d9d9"
+                    }
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "selected_state == 'Show all' || datum.State_Name == selected_state",
+                        "value": 1
+                    },
+                    "value": 0.6
+                },
+                "tooltip": [
+                    {
+                        "field": "State_Name",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Percent_Population",
+                        "type": "quantitative",
+                        "title": "Bachelor’s or Higher (Pop. %)",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "Number_Population",
+                        "type": "quantitative",
+                        "title": "Number of People",
+                        "format": ","
+                    }
+                ]
             }
         },
-        "tooltip": [
-            {
-                "field": "State_Name",
-                "type": "nominal",
-                "title": "State"
+        {
+            "mark": {
+                "type": "geoshape",
+                "stroke": "black",
+                "strokeWidth": 2
             },
-            {
-                "field": "Percent_Population",
-                "type": "quantitative",
-                "title": "Bachelor’s or Higher (Pop. %)",
-                "format": ".1f"
-            },
-            {
-                "field": "Number_Population",
-                "type": "quantitative",
-                "title": "Number of People",
-                "format": ","
+            "transform": [
+                {
+                    "filter": "selected_state != 'Show all' && datum.State_Name == selected_state"
+                }
+            ],
+            "encoding": {
+                "color": {
+                    "field": "Percent_Range",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "20–25%",
+                            "25–30%",
+                            "30–35%",
+                            "35%+"
+                        ],
+                        "range": [
+                            "#deebf7",
+                            "#9ecae1",
+                            "#4292c6",
+                            "#08519c"
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "State_Name",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Percent_Population",
+                        "type": "quantitative",
+                        "title": "Bachelor’s or Higher (Pop. %)",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "Number_Population",
+                        "type": "quantitative",
+                        "title": "Number of People",
+                        "format": ","
+                    }
+                ]
             }
-        ]
-    }
+        }
+    ]
 }
