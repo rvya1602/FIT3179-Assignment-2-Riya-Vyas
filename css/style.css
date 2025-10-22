@@ -40,18 +40,6 @@ h1 {
   padding: 10px;
 }
 
-.description-right {
-  padding-left: 20px;
-}
-
-.description-left {
-  padding-right: 20px;
-}
-
-.small-font {
-  font-size: 14px;
-}
-
 .graph_title {
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -62,9 +50,9 @@ h1 {
 }
 
 .graph_para {
-  font-family: 'Roboto', sans-serif;  /* clean, modern, readable */
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: #4B3F72;                     /* muted deep purple */
+  color: #4B3F72;
   text-align: justify;
   line-height: 1;
   margin-top: 8px;
@@ -72,9 +60,18 @@ h1 {
   max-width: 700px;
 }
 
+.para {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #4B3F72;
+  text-align: justify;
+  line-height: 1.1;
+  margin-top: 16px;
+}
+
 .graph_with_para {
   display: flex;
-  flex-direction: row;        /* align chart and paragraph side by side */
-  align-items: flex-start;    /* align top edges */
-  gap: 20px;                  /* space between chart and paragraph */
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
 }

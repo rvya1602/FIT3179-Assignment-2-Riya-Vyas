@@ -1,12 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-    "title": {
-        "text": "Domestic vs International Student Numbers Over the Years",
-        "fontSize": 20,
-        "fontWeight": "bold"
-    },
-    "width": 700,
-    "height": 500,
+    "width": 400,
+    "height": 300,
     "data": {
         "url": "data/dom_vs_int_students_2015_2024.csv"
     },
@@ -22,7 +17,7 @@
             ]
         },
         {
-            "calculate": "datum.series == 'Domestic_students' ? 'Domestic' : 'Overseas'",
+            "calculate": "datum.series == 'Domestic_students' ? 'Domestic' : 'International'",
             "as": "StudentType"
         }
     ],
@@ -40,9 +35,9 @@
                 "format": "%Y",
                 "title": "Year",
                 "tickCount": 7,
-                "titleFontSize": 16,
+                "titleFontSize": 14,
                 "titleFontWeight": "bold",
-                "titleColor": "#333",
+                "titleColor": "#4B0082",
                 "labelFontSize": 12
             }
         },
@@ -52,26 +47,27 @@
             "title": "Number of Students",
             "axis": {
                 "tickCount": 7,
-                "titleFontSize": 16,
+                "titleFontSize": 14,
                 "titleFontWeight": "bold",
-                "titleColor": "#333",
+                "titleColor": "#4B0082",
                 "labelFontSize": 12
             }
         },
         "color": {
-            "field": "series",
+            "field": "StudentType",
             "title": "Student Type",
             "scale": {
                 "scheme": "category20b"
             },
             "legend": {
-                "orient": "right",
+                "orient": "bottom",
                 "titleFontSize": 14,
                 "labelFontSize": 12,
                 "symbolSize": 150,
                 "padding": 10,
                 "titlePadding": 5,
-                "symbolType": "square"
+                "symbolType": "square",
+                "titleColor": "#4B0082"
             }
         },
         "tooltip": [

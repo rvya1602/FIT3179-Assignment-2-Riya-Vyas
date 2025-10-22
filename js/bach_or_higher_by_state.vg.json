@@ -85,7 +85,10 @@
                         ]
                     },
                     "legend": {
-                        "title": ["Percent of Population", "(Aged 15 Years and Over)"],
+                        "title": [
+                            "Percent of Population",
+                            "(Aged 15 Years and Over)"
+                        ],
                         "titleFontSize": 16,
                         "titleFontWeight": "bold",
                         "titleColor": "#4B0082",
