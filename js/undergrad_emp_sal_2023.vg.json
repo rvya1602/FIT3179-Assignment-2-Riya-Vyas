@@ -1,13 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Undergraduate Employment Outcomes & Salaries",
-        "fontSize": 18,
-        "fontWeight": "bold",
-        "anchor": "middle"
-    },
-    "width": 600,
-    "height": 800,
+    "width": 350,
+    "height": 500,
     "data": {
         "url": "data/undergrad_employment_salary.csv"
     },
@@ -39,9 +33,10 @@
             "sort": "-x",
             "axis": {
                 "title": "Area of Study",
-                "titleFontSize": 16,
+                "titleFontSize": 14,
                 "titleFontWeight": "bold",
-                "labelFontSize": 12
+                "labelFontSize": 12,
+                "titleColor": "#4B0082"
             }
         },
         "x": {
@@ -49,20 +44,32 @@
             "type": "ordinal",
             "axis": {
                 "title": "Median Full-time Salary (AUD)",
-                "titleFontSize": 16,
+                "titleFontSize": 14,
                 "titleFontWeight": "bold",
-                "format": ","
+                "format": ",",
+                "titleColor": "#4B0082"
             }
         },
         "color": {
             "field": "Employment_Bin",
             "type": "ordinal",
             "scale": {
-                "range": ["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c", "#00441b"]
+                "range": [
+                    "#ede7f6",
+                    "#d1c4e9",
+                    "#b39ddb",
+                    "#9575cd",
+                    "#673ab7",
+                    "#311b92"
+                ]
             },
             "legend": {
-                "title": "Full-time Employment (%)",
-                "labelExpr": "datum.value + '%'"
+                "title": [
+                    "Percent of Undergrads",
+                    "Employed Full-Time"
+                ],
+                "labelExpr": "datum.value + '%'",
+                "orient": "bottom-right"
             }
         },
         "tooltip": [

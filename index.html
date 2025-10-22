@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,145 +13,285 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <script src="js/vega_lite_vis.js"></script>
 
-    <title>W10 Homework</title>
+    <title>Education in Australia</title>
 </head>
 
 <body>
 
-  <div class="page">
-    <h1>The State of Study: Education Trends in Australia</h1>
+    <div class="page">
+        <h1>The State of Study: Education Trends in Australia</h1>
 
-    <div id="content">
+        <div id="content">
 
-        <!-- Internation Students by Country of Origin Graph -->
-        <div class="pure-g">
-            <div class="pure-u-1">
-                <div class="graph_title" style="text-align: left;">International Students by Country of Origin</div>
-                <div class="graph_with_para">
-                    <div id="int_students_by_cob" class="vis-container"></div>
-                    <p class="graph_para">
-                        In 2024, Australia continued to attract a significant number of international students enrolled in 
-                        tertiary education, underscoring its strong reputation as a global education hub. The majority of these 
-                        students come from Asia, with <strong>China</strong> leading at <strong>189,107 students</strong>, followed closely by <strong>India</strong> with <strong> 138,373</strong>. 
-                        Other Asian countries such as Nepal (65,529), the Philippines (39,223) and Vietnam (37,608) also contribute 
-                        substantially, highlighting the region’s strong and growing presence in Australia’s tertiary sector.
-                        In addition, nations from other continents, such as Colombia (34,224), Brazil (23,946), and the United States 
-                        (7,384), show that Australia attracts students from all around the world. This<strong> widespread international 
-                        participation enriches Australian campuses both culturally and academically</strong>, contributing significantly to 
-                        the higher education sector and the broader economy. Overall, the data reflects that <strong>Australia remains a 
-                        highly sought-after destination for students</strong>.
+            <!-- Internation Students by Country of Origin Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">International Students by Country of Origin</div>
+                    <div class="graph_with_para">
+                        <div id="int_students_by_cob" class="vis-container"></div>
+                        <p class="graph_para">
+                            In 2024, Australia continued to attract a significant number of international students
+                            enrolled in
+                            tertiary education, underscoring its strong reputation as a global education hub. The
+                            majority of these
+                            students come from Asia, with <strong>China</strong> leading at <strong>189,107
+                                students</strong>, followed closely by <strong>India</strong> with <strong>
+                                138,373</strong>.
+                            Other Asian countries such as Nepal (65,529), the Philippines (39,223) and Vietnam (37,608)
+                            also contribute
+                            substantially, highlighting the region’s strong and growing presence in Australia’s tertiary
+                            sector.
+                            In addition, nations from other continents, such as Colombia (34,224), Brazil (23,946), and
+                            the United States
+                            (7,384), show that Australia attracts students from all around the world. This<strong>
+                                widespread international
+                                participation enriches Australian campuses both culturally and academically</strong>,
+                            contributing significantly to
+                            the higher education sector and the broader economy. Overall, the data reflects that
+                            <strong>Australia remains a
+                                highly sought-after destination for students</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Australian Population with Bachelor's Degree or Higher Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">Australian Population with Bachelor's Degree or
+                        Higher by State</div>
+                    <div class="graph_with_para">
+                        <div id="pop_degree_by_state" class="vis-container"></div>
+                        <p class="graph_para" style="margin-top: 13%;">
+                            In 2021, among Australians aged 15 years and above, there were notable differences across
+                            states
+                            in the proportion of the population holding a bachelor’s degree or higher. The
+                            <strong>Australian Capital
+                                Territory</strong> stood out with the <strong>highest percentage at 43.0%</strong>,
+                            reflecting its
+                            strong concentration of professionals and public service employees. <strong>Victoria (29.2%)
+                                and New
+                                South Wales (27.8%) also had relatively high proportions</strong>, indicating a
+                            well-educated
+                            population in the two largest states. <strong>Western Australia (23.8%), South Australia
+                                (22.7%),
+                                and Queensland (22.1%) had moderate levels</strong>, while <strong>Tasmania (21.9%) and
+                                the
+                                Northern Territory (21.5%) had the lowest percentages</strong>, suggesting smaller
+                            shares
+                            of degree holders in these regions. Overall, this data highlights the variation in
+                            educational attainment across Australian states and territories, with urban and
+                            administrative centers showing notably higher concentrations of tertiary-educated
+                            individuals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- All Students vs Commencing Student in Australian Universities (by State) Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">All Students vs Commencing Students in Australian
+                        Universities (by State)</div>
+                    <div class="graph_with_para">
+                        <div id="total_students_state_uni" class="vis-container"></div>
+                    </div>
+                    <p class="para">
+                        In 2024, the distribution of commencing and total students across Australian universities by
+                        state shows
+                        notable trends and variations compared with 2023. <strong>New South Wales hosts some of the
+                            largest student
+                            populations, with the University of New South Wales (82,272 total students) and the
+                            University of Sydney
+                            (78,825) leading in size</strong>, and both universities saw increases in commencing
+                        students compared with 2023,
+                        particularly UNSW, which grew by 28.7%. <strong>Victoria similarly has large institutions such
+                            as Monash University
+                            (93,159 students) and The University of Melbourne (75,513)</strong>; Monash recorded a 19.1%
+                        rise in commencing students
+                        from 2023, while some smaller Victorian universities, like Federation University, experienced
+                        declines.
+                        <strong>Queensland universities show mixed trends compared with 2023, with The University of
+                            Queensland and Queensland
+                            University of Technology leading in size, but growth in commencing students ranges from
+                            small increases to
+                            slight decreases. Western Australia recorded strong growth in commencing students at some
+                            universities</strong>,
+                        including The University of Western Australia (+20.2%) and Curtin University (+15.9%) from 2023,
+                        though
+                        Murdoch University declined by 17.3%. <strong>South Australian universities mostly saw small
+                            declines or modest
+                            stability compared with 2023</strong>, while <strong>Tasmania’s University of Tasmania
+                            recorded a slight increase (+3.3%).
+                            The Northern Territory continues to have very small student populations, and the Australian
+                            Capital Territory
+                            saw declines</strong> in commencing students at both The Australian National University and
+                        University of Canberra
+                        compared with 2023. Overall, the data highlights that while Australia’s major universities
+                        continue to
+                        attract large numbers of students, the change from 2023 shows varied growth trends, reflecting
+                        differing
+                        regional dynamics and institutional appeal across the country in 2024.
                     </p>
                 </div>
             </div>
-        </div>
 
 
-        <!-- Australian Population with Bachelor's Degree or Higher Graph -->
-        <div class="pure-g">
-            <div class="pure-u-1">
-                <div class="graph_title" style="text-align: left;">Australian Population with Bachelor's Degree or Higher by State</div>
-                <div class="graph_with_para">
-                    <div id="pop_degree_by_state" class="vis-container"></div>
-                    <p class="graph_para" style="margin-top: 13%;">
-                        In 2021, among Australians aged 15 years and above, there were notable differences across states
-                        in the proportion of the population holding a bachelor’s degree or higher. The <strong>Australian Capital
-                            Territory</strong> stood out with the <strong>highest percentage at 43.0%</strong>, reflecting its
-                        strong concentration of professionals and public service employees. <strong>Victoria (29.2%) and New
-                            South Wales (27.8%) also had relatively high proportions</strong>, indicating a well-educated
-                        population in the two largest states. <strong>Western Australia (23.8%), South Australia (22.7%),
-                            and Queensland (22.1%) had moderate levels</strong>, while <strong>Tasmania (21.9%) and the
-                            Northern Territory (21.5%) had the lowest percentages</strong>, suggesting smaller shares
-                        of degree holders in these regions. Overall, this data highlights the variation in
-                        educational attainment across Australian states and territories, with urban and
-                        administrative centers showing notably higher concentrations of tertiary-educated
-                        individuals.
-                    </p>
+            <!-- International vs Domestic Student Numbers Over the Years Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">International vs Domestic Student Numbers Over
+                        the Years</div>
+                    <div class="graph_with_para">
+                        <div id="dom_vs_int_students" class="vis-container"></div>
+                        <p class="graph_para">
+                            Between <strong>2015 and 2019</strong>, Australia’s total tertiary student population grew
+                            steadily,
+                            reflecting the country’s strong appeal as an education destination. <strong>Domestic student
+                                numbers increased from 1,046,835 to 1,087,850</strong>, while <strong>international
+                                students grew even
+                                faster, from 363,298 to 521,948</strong>, highlighting the rising global demand for
+                            Australian
+                            higher education, particularly from countries such as China, India, Nepal, and Vietnam.
+                            The <strong>COVID-19 pandemic in 2020 and 2021 caused a sharp decline in international
+                                students,
+                                falling to 440,309</strong>, as border closures and travel restrictions limited
+                            mobility. <strong>Domestic
+                                student numbers, however, continued to rise, reaching a peak of 1,162,260 in
+                                2021</strong>, showing
+                            the resilience of local enrolments despite global disruption. From <strong>2022 onwards,
+                                international
+                                students returned in significant numbers, climbing to 589,288 by 2024, while domestic
+                                enrolments
+                                stabilized around 1,086,000</strong>. By 2024, the total tertiary student population
+                            reached 1,676,077,
+                            surpassing pre-pandemic levels. This trajectory illustrates not only a robust post-pandemic
+                            recovery but also the continued global attractiveness of Australia’s higher education
+                            sector,
+                            emphasizing the combined economic, cultural, and social contributions of both domestic and
+                            international students to the country.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Change in Populatity of Areas of Study (Based on Domestic Students 2015 - 2024) Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">Change in Populatity of Areas of Study (Based on
+                        Domestic Students 2015 - 2024)</div>
+                    <div class="graph_with_para">
+                        <div id="dom_com_edu_2015_2024" class="vis-container"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Change in Populatity of Areas of Study (Based on Domestic Students 2023 - 2024) Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">Change in Populatity of Areas of Study (Based on
+                        Domestic Students 2023 - 2024)</div>
+                    <div class="graph_with_para">
+                        <div id="dom_com_edu_2023_2024" class="vis-container"></div>
+                    </div>
+                    <p class="para">
+                        Over the decade from <strong>2015 to 2024</strong> the domestic student commencements landscape
+                        in Australia has
+                        shifted significantly across fields of study. Some fields show remarkable growth — notably
+                        <strong>“Information Technology” with a ~91.4 % increase, and “Health” up ~25.0 % and
+                            “Architecture and
+                            Building” up ~23.4 %</strong>. Meanwhile several fields declined: “Creative Arts” down ~21.8
+                        %, “Management
+                        and Commerce” down ~15.9 %, and “Society and Culture” down ~7.5 %. This indicates a structural
+                        shift
+                        in student demand away from some traditional broad fields (management/commerce, creative arts)
+                        toward
+                        more technical or applied fields (IT, engineering/related, health). The most recent year
+                        <strong>(2023 to 2024)
+                            paints a more nuanced picture</strong>: growth continues in many fields but at a much more
+                        modest rate and with
+                        some fields still declining. For example, “Engineering and Related Technologies” grew ~10.3 % in
+                        just
+                        one year, which suggests strong momentum, but <strong>“Information Technology” grew only ~0.3 %
+                            over that
+                            year</strong> — indicating that <strong>IT growth may have plateaued after the large
+                            longer-term increase</strong>. “Health”
+                        grew ~5.1 % and “Education” grew ~10.0 % in that year, showing recent strength, while
+                        “Agriculture,
+                        Environmental and Related Studies” fell ~2.0 % and “Food, Hospitality and Personal Services”
+                        dropped
+                        ~5.5 %. Comparing the two time spans, many of the fields with large decade-growth are now seeing
+                        slower
+                        expansion or even stagnation, while some fields that had modest decade growth are now showing
+                        stronger
+                        recent annual growth (e.g., Education +10.0 % in 2023-24). In short: <strong>the long-term trend
+                            shows clear
+                            directional shifts in student interest across fields, and the recent year shows that while
+                            the broad
+                            patterns hold, the pace of change is uneven</strong> — some fields are moderating, some
+                        accelerating, and some
+                        still in decline.
+                </div>
+            </div>
+
+
+            <!-- Undergraduate Employment Outcomes and Median Salaries by Area of Study Graph -->
+            <div class="pure-g">
+                <div class="pure-u-1">
+                    <div class="graph_title" style="text-align: left;">Undergraduate Employment Outcomes and Median
+                        Salaries by Area of Study</div>
+                    <div class="graph_with_para">
+                        <div id="undergrad_emp_sal" class="vis-container"></div>
+                        <p class="graph_para">
+                            In 2023, full-time employment outcomes and salaries for Australian undergraduates
+                            varied notably across fields of study, reflecting differences in labour market demand and
+                            professional pathways. <strong>Medicine and Pharmacy graduates had the highest full-time
+                                employment
+                                rates at 95.6% and 98.4% respectively</strong>, indicating strong demand for healthcare
+                            professionals. However, <strong>Pharmacy graduates earned a comparatively low median salary
+                                of $55,500, suggesting a more saturated market or limited entry-level pay</strong>.
+                            By contrast, <strong>Dentistry ($94,400)</strong> and <strong>Medicine ($85,000)</strong>
+                            recorded the highest
+                            salaries, highlighting the strong financial returns of longer, specialist degrees. Fields
+                            such as <strong>Engineering (89.2%, $75,000)</strong> and <strong>Teacher Education (89.6%,
+                                $75,000)</strong> also
+                            demonstrated <strong>both strong employment and solid pay outcomes</strong>. Meanwhile,
+                            disciplines in the
+                            creative and communication sectors—such as Creative Arts (53.5%, $59,500) and
+                            Communications (64.9%, $65,000)—continued to face lower employment prospects and earnings,
+                            reflecting the more competitive and less structured job markets in those fields. Overall,
+                            the
+                            median full-time employment rate <strong>across all fields was 79%, with a median salary of
+                                $71,000</strong>,
+                            underscoring the continued advantage of professional and technical degrees in securing
+                            stable and
+                            well-paid employment.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
-
-        <!-- All Students vs Commencing Student in Australian Universities (by State) -->
-        <div class="pure-g">
-            <div class="pure-u-1">
-                <div class="graph_title" style="text-align: left;">All Students vs Commencing Students in Australian Universities (by State)</div>
-                <div class="graph_with_para">
-                    <div id="total_students_state_uni" class="vis-container"></div>
-                </div>
-                <p class="para">
-                    In 2024, the distribution of commencing and total students across Australian universities by state shows 
-                    notable trends and variations compared with 2023. <strong>New South Wales hosts some of the largest student 
-                    populations, with the University of New South Wales (82,272 total students) and the University of Sydney 
-                    (78,825) leading in size</strong>, and both universities saw increases in commencing students compared with 2023, 
-                    particularly UNSW, which grew by 28.7%. <strong>Victoria similarly has large institutions such as Monash University 
-                    (93,159 students) and The University of Melbourne (75,513)</strong>; Monash recorded a 19.1% rise in commencing students 
-                    from 2023, while some smaller Victorian universities, like Federation University, experienced declines. 
-                    <strong>Queensland universities show mixed trends compared with 2023, with The University of Queensland and Queensland 
-                    University of Technology leading in size, but growth in commencing students ranges from small increases to 
-                    slight decreases. Western Australia recorded strong growth in commencing students at some universities</strong>, 
-                    including The University of Western Australia (+20.2%) and Curtin University (+15.9%) from 2023, though 
-                    Murdoch University declined by 17.3%. <strong>South Australian universities mostly saw small declines or modest 
-                    stability compared with 2023</strong>, while <strong>Tasmania’s University of Tasmania recorded a slight increase (+3.3%). 
-                    The Northern Territory continues to have very small student populations, and the Australian Capital Territory 
-                    saw declines</strong> in commencing students at both The Australian National University and University of Canberra 
-                    compared with 2023. Overall, the data highlights that while Australia’s major universities continue to 
-                    attract large numbers of students, the change from 2023 shows varied growth trends, reflecting differing 
-                    regional dynamics and institutional appeal across the country in 2024.
-                </p>
-            </div>
+        <div class="para">
+            <span>
+                A visualisation by <strong>Riya Vyas</strong><br><br>
+                Data provided by <strong>Australian Government (Department of Education), 
+                    Informed Decisions (ID), Quality Indicators for Learning and Teaching (QILT)</strong><br><br>
+                Published on <strong>23rd October 2025</strong>
+            </span>
         </div>
-
-
-        <!-- International vs Domestic Student Numbers Over the Years Graph -->
-        <div class="pure-g">
-            <div class="pure-u-1">
-                <div class="graph_title" style="text-align: left;">International vs Domestic Student Numbers Over the Years</div>
-                <div class="graph_with_para">
-                    <div id="dom_vs_int_students" class="vis-container"></div>
-                    <p class="graph_para">
-                        Between <strong>2015 and 2019</strong>, Australia’s total tertiary student population grew steadily, 
-                        reflecting the country’s strong appeal as an education destination. <strong>Domestic student 
-                        numbers increased from 1,046,835 to 1,087,850</strong>, while <strong>international students grew even 
-                        faster, from 363,298 to 521,948</strong>, highlighting the rising global demand for Australian 
-                        higher education, particularly from countries such as China, India, Nepal, and Vietnam. 
-                        The <strong>COVID-19 pandemic in 2020 and 2021 caused a sharp decline in international students, 
-                        falling to 440,309</strong>, as border closures and travel restrictions limited mobility. <strong>Domestic 
-                        student numbers, however, continued to rise, reaching a peak of 1,162,260 in 2021</strong>, showing 
-                        the resilience of local enrolments despite global disruption. From <strong>2022 onwards, international 
-                        students returned in significant numbers, climbing to 589,288 by 2024, while domestic enrolments 
-                        stabilized around 1,086,000</strong>. By 2024, the total tertiary student population reached 1,676,077, 
-                        surpassing pre-pandemic levels. This trajectory illustrates not only a robust post-pandemic 
-                        recovery but also the continued global attractiveness of Australia’s higher education sector, 
-                        emphasizing the combined economic, cultural, and social contributions of both domestic and 
-                        international students to the country.
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-
-      <div class="pure-g">
-        <div class="pure-u-1-2">
-          <div id="dom_com_edu_2015_2024" class="vis-container"></div>
-        </div>
-        <div class="pure-u-1-2">
-          <div id="dom_com_edu_2023_2024" class="vis-container"></div>
-        </div>
-      </div>
-
-      <div class="pure-g">
-        <div class="pure-u-1-2">
-          <div id="undergrad_emp_sal" class="vis-container"></div>
-        </div>
-      </div>
-
     </div>
-  </div>
 
 </body>
 
