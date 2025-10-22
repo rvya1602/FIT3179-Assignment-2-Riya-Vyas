@@ -1,9 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 450,
-    "height": 450,
+    "width": 700,
+    "height": 700,
     "view": {
         "stroke": null
+    },
+    "title": {
+        "text": "Percent of Population with Bachelor or Higher by State (2021)",
+        "fontSize": 20,
+        "fontWeight": "bold"
     },
     "data": {
         "url": "map/STE_2016_AUST.json",
@@ -78,18 +83,17 @@
                             "35%+"
                         ],
                         "range": [
-                            "#f2e5ff",
-                            "#d4b3ff",
-                            "#a05cff",
-                            "#5c00b3"
+                            "#deebf7",
+                            "#9ecae1",
+                            "#4292c6",
+                            "#08519c"
                         ]
                     },
                     "legend": {
-                        "title": ["Percent of Population", "(Aged 15 Years and Over)"],
+                        "title": "Percent of Population (Aged 15 Years and Over) with Bachelor’s Degree or Higher",
                         "titleFontSize": 16,
                         "titleFontWeight": "bold",
-                        "titleColor": "#4B0082",
-                        "labelFontSize": 12,
+                        "labelFontSize": 14,
                         "symbolSize": 400,
                         "symbolType": "square",
                         "orient": "top-left",
@@ -152,13 +156,32 @@
                             "35%+"
                         ],
                         "range": [
-                            "#f2e5ff",
-                            "#d4b3ff",
-                            "#a05cff",
-                            "#5c00b3"
+                            "#deebf7",
+                            "#9ecae1",
+                            "#4292c6",
+                            "#08519c"
                         ]
                     }
-                }
+                },
+                "tooltip": [
+                    {
+                        "field": "State_Name",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "Percent_Population",
+                        "type": "quantitative",
+                        "title": "Bachelor’s or Higher (Pop. %)",
+                        "format": ".1f"
+                    },
+                    {
+                        "field": "Number_Population",
+                        "type": "quantitative",
+                        "title": "Number of People",
+                        "format": ","
+                    }
+                ]
             }
         }
     ]

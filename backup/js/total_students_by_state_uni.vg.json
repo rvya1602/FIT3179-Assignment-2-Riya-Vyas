@@ -1,0 +1,198 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+    "height": 500,
+    "title": {
+        "text": "Commencing Students vs All Students by Institution & State (2024)",
+        "fontSize": 20,
+        "fontWeight": "bold"
+    },
+    "data": {
+        "url": "data/total_students_state_uni_2024.csv"
+    },
+    "params": [
+        {
+            "name": "StateSelection",
+            "value": null,
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "New South Wales",
+                    "Victoria",
+                    "Queensland",
+                    "South Australia",
+                    "Western Australia",
+                    "Tasmania",
+                    "Northern Territory",
+                    "Australian Capital Territory"
+                ],
+                "labels": [
+                    "All States",
+                    "NSW",
+                    "Victoria",
+                    "Queensland",
+                    "South Australia",
+                    "Western Australia",
+                    "Tasmania",
+                    "Northern Territory",
+                    "ACT"
+                ],
+                "name": "Select State:"
+            }
+        },
+        {
+            "name": "AllStudentsMin",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 93000,
+                "step": 100,
+                "name": "Minimum Number of Total Students:"
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.All_Students >= AllStudentsMin"
+        },
+        {
+            "filter": "StateSelection == null || datum.State == StateSelection"
+        },
+        {
+            "calculate": "datum.Percent_Change_Commencing * 100",
+            "as": "Percent_Change_Commencing_Percent"
+        }
+    ],
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "x": {
+                    "field": "All_Students",
+                    "type": "quantitative",
+                    "title": "Total Students",
+                    "axis": {
+                        "tickCount": 7,
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333",
+                        "labelFontSize": 12
+                    }
+                },
+                "y": {
+                    "field": "Commencing_Students",
+                    "type": "quantitative",
+                    "title": "Commencing Students",
+                    "axis": {
+                        "tickCount": 7,
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333",
+                        "labelFontSize": 12
+                    }
+                },
+                "size": {
+                    "field": "Percent_Change_Commencing_Percent",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            -20,
+                            -10,
+                            0,
+                            10,
+                            20
+                        ],
+                        "range": [
+                            50,
+                            200,
+                            450,
+                            800,
+                            1250,
+                            1800
+                        ]
+                    },
+                    "legend": {
+                        "title": ["Change (%) in Commencing Students", "(Compared to 2023)"],
+                        "titleFontSize": 14,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333",
+                        "labelFontSize": 12,
+                        "symbolSize": 200,
+                        "orient": "right",
+                        "format": ".1f",
+                        "titleLimit": 800
+                    }
+                },
+                "color": {
+                    "field": "State",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "New South Wales",
+                            "Victoria",
+                            "Queensland",
+                            "South Australia",
+                            "Western Australia",
+                            "Tasmania",
+                            "Northern Territory",
+                            "Australian Capital Territory"
+                        ],
+                        "range": [
+                            "#1f77b4",
+                            "#ff7f0e",
+                            "#2ca02c",
+                            "#d62728",
+                            "#9467bd",
+                            "#8c564b",
+                            "#e377c2",
+                            "#7f7f7f"
+                        ]
+                    },
+                    "legend": {
+                        "title": "State",
+                        "titleFontSize": 14,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333",
+                        "labelFontSize": 12,
+                        "orient": "right",
+                        "symbolType": "square"
+                    }
+                },
+                "opacity": {
+                    "value": 0.7
+                },
+                "tooltip": [
+                    {
+                        "field": "Institution",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "State",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Commencing_Students",
+                        "type": "quantitative",
+                        "title": "Commencing Students",
+                        "format": ","
+                    },
+                    {
+                        "field": "All_Students",
+                        "type": "quantitative",
+                        "title": "Total Students",
+                        "format": ","
+                    },
+                    {
+                        "field": "Percent_Change_Commencing_Percent",
+                        "type": "quantitative",
+                        "format": ".1f",
+                        "title": "% Change Commencing Students from 2023"
+                    }
+                ]
+            }
+        }
+    ]
+}

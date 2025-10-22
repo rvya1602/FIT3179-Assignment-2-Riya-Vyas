@@ -1,0 +1,97 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+    "title": {
+        "text": "Domestic vs International Student Numbers Over the Years",
+        "fontSize": 20,
+        "fontWeight": "bold"
+    },
+    "width": 700,
+    "height": 500,
+    "data": {
+        "url": "data/dom_vs_int_students_2015_2024.csv"
+    },
+    "transform": [
+        {
+            "fold": [
+                "Domestic_students",
+                "Overseas_students"
+            ],
+            "as": [
+                "series",
+                "count"
+            ]
+        },
+        {
+            "calculate": "datum.series == 'Domestic_students' ? 'Domestic' : 'Overseas'",
+            "as": "StudentType"
+        }
+    ],
+    "mark": {
+        "type": "area",
+        "interpolate": "monotone",
+        "opacity": 0.8
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "format": "%Y",
+                "title": "Year",
+                "tickCount": 7,
+                "titleFontSize": 16,
+                "titleFontWeight": "bold",
+                "titleColor": "#333",
+                "labelFontSize": 12
+            }
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "count",
+            "title": "Number of Students",
+            "axis": {
+                "tickCount": 7,
+                "titleFontSize": 16,
+                "titleFontWeight": "bold",
+                "titleColor": "#333",
+                "labelFontSize": 12
+            }
+        },
+        "color": {
+            "field": "series",
+            "title": "Student Type",
+            "scale": {
+                "scheme": "category20b"
+            },
+            "legend": {
+                "orient": "right",
+                "titleFontSize": 14,
+                "labelFontSize": 12,
+                "symbolSize": 150,
+                "padding": 10,
+                "titlePadding": 5,
+                "symbolType": "square"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Year",
+                "type": "temporal",
+                "title": "Year",
+                "format": "%Y"
+            },
+            {
+                "field": "StudentType",
+                "type": "nominal",
+                "title": "Student Type"
+            },
+            {
+                "field": "count",
+                "type": "quantitative",
+                "title": "Number of Students",
+                "format": ","
+            }
+        ]
+    }
+}

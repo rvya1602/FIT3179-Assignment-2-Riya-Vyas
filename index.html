@@ -11,57 +11,97 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
     <script src="js/vega_lite_vis.js"></script>
 
     <title>W10 Homework</title>
 </head>
+
 <body>
 
-    <nav class="navbar">
-      <h1>Education in Australia (Change to Better Name Later)</h1>
-    </nav>
+  <div class="page">
+    <h1>The State of Study: Education Trends in Australia</h1>
 
     <div id="content">
 
+        <!-- Internation Students by Country of Origin Graph -->
         <div class="pure-g">
-            <div class="pure-u-1-2">
-                <div id="int_students_by_cob"></div>
-            </div>
-            <div class="pure-u-1-2">
-                <div id="pop_degree_by_state"></div>
+            <div class="pure-u-1">
+                <div class="graph_title" style="text-align: left;">International Students by Country of Origin</div>
+                <div class="graph_with_para">
+                    <div id="int_students_by_cob" class="vis-container"></div>
+                    <p class="graph_para">
+                        In 2024, Australia continued to attract a significant number of international students enrolled in 
+                        tertiary education, underscoring its strong reputation as a global education hub. The majority of these 
+                        students come from Asia, with <strong>China</strong> leading at <strong>189,107 students</strong>, followed closely by <strong>India</strong> with <strong> 138,373</strong>. 
+                        Other Asian countries such as Nepal (65,529), the Philippines (39,223) and Vietnam (37,608) also contribute 
+                        substantially, highlighting the region’s strong and growing presence in Australia’s tertiary sector.
+                        In addition, nations from other continents, such as Colombia (34,224), Brazil (23,946), and the United States 
+                        (7,384), show that Australia attracts students from all around the world. This<strong> widespread international 
+                        participation enriches Australian campuses both culturally and academically</strong>, contributing significantly to 
+                        the higher education sector and the broader economy. Overall, the data reflects that <strong>Australia remains a 
+                        highly sought-after destination for students</strong>.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="pure-g">
 
-            <div class="pure-u-1-2">
-                <div id="total_students_state_uni"></div>
-            </div>
-            <div class="pure-u-1-2">
-                <div id="dom_vs_int_students"></div>
+        <!-- Australian Population with Bachelor's Degree or Higher Graph -->
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <div class="graph_title" style="text-align: left;">Australian Population with Bachelor's Degree or Higher by State</div>
+                <div class="graph_with_para">
+                    <div id="pop_degree_by_state" class="vis-container"></div>
+                    <p class="graph_para" style="margin-top: 13%;">
+                        In 2021, among Australians aged 15 years and above, there were notable differences across states
+                        in the proportion of the population holding a bachelor’s degree or higher. The <strong>Australian Capital
+                            Territory</strong> stood out with the <strong>highest percentage at 43.0%</strong>, reflecting its
+                        strong concentration of professionals and public service employees. <strong>Victoria (29.2%) and New
+                            South Wales (27.8%) also had relatively high proportions</strong>, indicating a well-educated
+                        population in the two largest states. <strong>Western Australia (23.8%), South Australia (22.7%),
+                            and Queensland (22.1%) had moderate levels</strong>, while <strong>Tasmania (21.9%) and the
+                            Northern Territory (21.5%) had the lowest percentages</strong>, suggesting smaller shares
+                        of degree holders in these regions. Overall, this data highlights the variation in
+                        educational attainment across Australian states and territories, with urban and
+                        administrative centers showing notably higher concentrations of tertiary-educated
+                        individuals.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="pure-g">
 
-            <div class="pure-u-1-2">
-                <div id="dom_com_edu_2015_2024"></div>
-            </div>
-            <div class="pure-u-1-2">
-                <div id="dom_com_edu_2023_2024"></div>
-            </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="total_students_state_uni" class="vis-container"></div>
         </div>
-        <div class="pure-g">
-
-            <div class="pure-u-1-2">
-                <div id="undergrad_emp_sal"></div>
-            </div>
-            <!-- <div class="pure-u-1-2">
-                <div id="dom_com_edu_2023_2024"></div>
-            </div> -->
+        <div class="pure-u-1-2">
+          <div id="dom_vs_int_students" class="vis-container"></div>
         </div>
+      </div>
 
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="dom_com_edu_2015_2024" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="dom_com_edu_2023_2024" class="vis-container"></div>
+        </div>
+      </div>
+
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="undergrad_emp_sal" class="vis-container"></div>
+        </div>
+      </div>
 
     </div>
-
+  </div>
 
 </body>
+
+
+
 </html>

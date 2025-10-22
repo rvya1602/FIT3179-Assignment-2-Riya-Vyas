@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Undergraduate Employment Outcomes & Salaries",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "anchor": "middle"
+    },
+    "width": 600,
+    "height": 800,
+    "data": {
+        "url": "data/undergrad_employment_salary.csv"
+    },
+    "transform": [
+        {
+            "bin": {
+                "maxbins": 6
+            },
+            "field": "Median_Fulltime_Salary",
+            "as": "Salary_Bin"
+        },
+        {
+            "bin": {
+                "maxbins": 6,
+                "extent": [
+                    50,
+                    100
+                ]
+            },
+            "field": "Fulltime_Employment",
+            "as": "Employment_Bin"
+        }
+    ],
+    "mark": "rect",
+    "encoding": {
+        "y": {
+            "field": "Area_Of_Study",
+            "type": "ordinal",
+            "sort": "-x",
+            "axis": {
+                "title": "Area of Study",
+                "titleFontSize": 16,
+                "titleFontWeight": "bold",
+                "labelFontSize": 12
+            }
+        },
+        "x": {
+            "field": "Salary_Bin",
+            "type": "ordinal",
+            "axis": {
+                "title": "Median Full-time Salary (AUD)",
+                "titleFontSize": 16,
+                "titleFontWeight": "bold",
+                "format": ","
+            }
+        },
+        "color": {
+            "field": "Employment_Bin",
+            "type": "ordinal",
+            "scale": {
+                "range": ["#edf8e9", "#bae4b3", "#74c476", "#31a354", "#006d2c", "#00441b"]
+            },
+            "legend": {
+                "title": "Full-time Employment (%)",
+                "labelExpr": "datum.value + '%'"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Area_Of_Study",
+                "type": "nominal",
+                "title": "Field of Study"
+            },
+            {
+                "field": "Fulltime_Employment",
+                "type": "quantitative",
+                "title": "Full-Time Employment (%)"
+            },
+            {
+                "field": "Median_Fulltime_Salary",
+                "type": "quantitative",
+                "title": "Median Full-Time Salary (AUD)",
+                "format": "$,.0f"
+            }
+        ]
+    }
+}

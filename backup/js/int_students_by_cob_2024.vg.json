@@ -1,7 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 350,
-    "height": 300,
+    "title": {
+        "text": "International Students in Australia by Top 20 Countries of Origin (2024)",
+        "fontSize": 20,
+        "fontWeight": "bold"
+    },
+    "width": 400,
+    "height": 400,
     "data": {
         "url": "data/international_students_by_cob_20.csv"
     },
@@ -14,10 +19,9 @@
                     "type": "quantitative",
                     "title": "Number of International Students",
                     "axis": {
-                        "titleFontSize": 14,
-                        "titleFontWeight": "bolder",
-                        "titleColor": "#4B0082",
-                        "labelFontSize": 12
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333"
                     }
                 },
                 "y": {
@@ -26,9 +30,9 @@
                     "sort": "none",
                     "title": "Country",
                     "axis": {
-                        "titleFontSize": 14,
-                        "titleFontWeight": "bolder",
-                        "titleColor": "#4B0082",
+                        "titleFontSize": 16,
+                        "titleFontWeight": "bold",
+                        "titleColor": "#333",
                         "labelFontSize": 12
                     }
                 },
